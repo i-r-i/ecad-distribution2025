@@ -13,9 +13,13 @@ main:
 
 
 # *** Do some work ***
-    addi a2, zero, 0x123 # a2 := 0x123
+    li    a0, 100
+    li    a1, 4
+    call  div
+
     # example of printing value of register a2 
-    DEBUG_PRINT a2
+    DEBUG_PRINT a0
+    DEBUG_PRINT a1
 
 # *** End useful work ***
 
