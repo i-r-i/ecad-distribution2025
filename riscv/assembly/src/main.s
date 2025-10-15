@@ -13,7 +13,7 @@ main:
 
 
 # *** Do some work ***
-    li    a0, 100
+    li    a0, 40
     li    a1, 4
     call  div
 

@@ -14,29 +14,39 @@ div:
     # ...
 
     # do your work
+
+    
+
     # example of printing inputs a0 and a1
 
     # set quotient and remainder to 0
     li   t0, 0
     li   t1, 0
+
+    # CHECK DENOINATOR != 0
+    beqz a1, end  # t0 and t1 are currently 0 and replace the return values at the end
     
-    li t2, 0
-    mv t3, a0
+
+continue:
+    
+    li   t2, 0
+    mv   t3, a0
+    li   t4, 1
+
     # how to get number of bits in N??
     # obvious thing is just to shift until get equal to 0 but thats a loop
 
-    li t4, 1
+    # find number of bits in N - does it work just starting from word length? would mean lots more unnecessary iterations of the loop
 
+# count:
+#    blez t3, begin
+#    srli t3, t3, 1
+#    addi t2, t2, 1
+#    j    count
 
-# find number of bits in N
-count:
-    blez t3, done
-    srli t3, t3, 1
-    addi t2, t2, 1
-    j    count
-done:
-    # also need to add check if denom is 0
-
+    # test with just starting with word length
+    li   t2, 32
+    
 begin:
     # checking loop condition
     blez  t2, end
@@ -50,15 +60,14 @@ begin:
     andi  t3, t3, 1 # get only first bit of N - all others are 0
     or    t1, t1, t3
     
-
-    blt   t1, a1, begin # if R < D, skip next step, go back to top of loop
+    # if R < D, skip next step, go back to top of loop
+    blt   t1, a1, begin 
     sub   t1, t1, a1
 
     # set Q[i] to 1
     li   t3, 1
     sll  t3, t3, t2
     or   t0, t0, t3
-
 
     j    begin
 
