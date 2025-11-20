@@ -13,8 +13,8 @@ main:
 
 
 # *** Do some work ***
-    li    a0, 40
-    li    a1, 4
+    li    a0, 32
+    li    a1, 3
     call  div
 
     # example of printing value of register a2 

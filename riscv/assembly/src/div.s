@@ -15,10 +15,6 @@ div:
 
     # do your work
 
-    
-
-    # example of printing inputs a0 and a1
-
     # set quotient and remainder to 0
     li   t0, 0
     li   t1, 0
@@ -36,13 +32,7 @@ continue:
     # how to get number of bits in N??
     # obvious thing is just to shift until get equal to 0 but thats a loop
 
-    # find number of bits in N - does it work just starting from word length? would mean lots more unnecessary iterations of the loop
-
-# count:
-#    blez t3, begin
-#    srli t3, t3, 1
-#    addi t2, t2, 1
-#    j    count
+    # find number of bits in N? - does it work just starting from word length? would mean lots more unnecessary iterations of the loop
 
     # test with just starting with word length
     li   t2, 32

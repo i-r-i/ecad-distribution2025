@@ -1,0 +1,399 @@
+time=00000001  pc=0x00000000:   ---bubble number 0 ---
+time=00000002  pc=0x00000000:   ---bubble number 1 ---
+time=00000003  pc=0x00000000:   ---bubble number 2 ---
+time=00000004  pc=0x00000000:   ---bubble number 3 ---
+time=00000005  pc=0x00000000:   AUIPC   sp, 0x00010000          sp := 0x00010000
+time=00000006  pc=0x00000004:   ADDI    sp, sp, -4              sp := 0x0000fffc, sp = 0x00010000
+time=00000007  pc=0x00000008:   AUIPC   t0, 0x00000000          t0 := 0x00000008
+time=00000008  pc=0x0000000c:   ADDI    t0, t0, 48              t0 := 0x00000038, t0 = 0x00000008
+time=00000009  pc=0x00000010:   CSRRW   zero, MTVEC, t0
+time=00000010  pc=0x00000014:   JAL     ra, 212                 target = 0x000000e8
+time=00000011  pc=0x00000018:   ---bubble number 4 ---
+time=00000012  pc=0x0000001c:   ---bubble number 5 ---
+time=00000013  pc=0x00000020:   ---bubble number 6 ---
+time=00000014  pc=0x000000e8:   ADDI    sp, sp, -32             sp := 0x0000ffdc, sp = 0x0000fffc
+time=00000015  pc=0x000000ec:   SW      ra, 28(sp)              mem[0000fff8] := 0x00000018, sp = 0x0000ffdc, ra = 0x00000018
+time=00000016  pc=0x000000f0:   ADDI    a0, zero, 32            a0 := 0x00000020, 
+time=00000017  pc=0x000000f4:   ADDI    a1, zero, 3             a1 := 0x00000003, 
+time=00000018  pc=0x000000f8:   JAL     ra, -128                        target = 0x00000078
+time=00000019  pc=0x000000fc:   ---bubble number 7 ---
+time=00000020  pc=0x00000100:   ---bubble number 8 ---
+time=00000021  pc=0x00000104:   ---bubble number 9 ---
+time=00000022  pc=0x00000078:   ADDI    sp, sp, -32             sp := 0x0000ffbc, sp = 0x0000ffdc
+time=00000023  pc=0x0000007c:   SW      ra, 28(sp)              mem[0000ffd8] := 0x000000fc, sp = 0x0000ffbc, ra = 0x000000fc
+time=00000024  pc=0x00000080:   SW      fp, 24(sp)              mem[0000ffd4] := 0x00000000, sp = 0x0000ffbc, fp = 0x00000000
+time=00000025  pc=0x00000084:   ADDI    t0, zero, 0             t0 := 0x00000000, 
+time=00000026  pc=0x00000088:   ADDI    t1, zero, 0             t1 := 0x00000000, 
+time=00000027  pc=0x0000008c:   BEQ     a1, zero, 0x000000d0    a1 = 0x00000003, branch not taken
+time=00000028  pc=0x00000090:   ADDI    t2, zero, 0             t2 := 0x00000000, 
+time=00000029  pc=0x00000094:   ADDI    t3, a0, 0               t3 := 0x00000020, a0 = 0x00000020
+time=00000030  pc=0x00000098:   ADDI    t4, zero, 1             t4 := 0x00000001, 
+time=00000031  pc=0x0000009c:   ADDI    t2, zero, 32            t2 := 0x00000020, 
+time=00000032  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000020, branch not taken
+time=00000033  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000001f, t2 = 0x00000020, t4 = 0x00000001
+time=00000034  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000035  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000001f
+time=00000036  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000037  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000038  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000039  pc=0x000000bc:   ---bubble number 10 ---
+time=00000040  pc=0x000000c0:   ---bubble number 11 ---
+time=00000041  pc=0x000000c4:   ---bubble number 12 ---
+time=00000042  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000001f, branch not taken
+time=00000043  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000001e, t2 = 0x0000001f, t4 = 0x00000001
+time=00000044  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000045  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000001e
+time=00000046  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000047  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000048  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000049  pc=0x000000bc:   ---bubble number 13 ---
+time=00000050  pc=0x000000c0:   ---bubble number 14 ---
+time=00000051  pc=0x000000c4:   ---bubble number 15 ---
+time=00000052  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000001e, branch not taken
+time=00000053  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000001d, t2 = 0x0000001e, t4 = 0x00000001
+time=00000054  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000055  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000001d
+time=00000056  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000057  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000058  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000059  pc=0x000000bc:   ---bubble number 16 ---
+time=00000060  pc=0x000000c0:   ---bubble number 17 ---
+time=00000061  pc=0x000000c4:   ---bubble number 18 ---
+time=00000062  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000001d, branch not taken
+time=00000063  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000001c, t2 = 0x0000001d, t4 = 0x00000001
+time=00000064  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000065  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000001c
+time=00000066  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000067  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000068  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000069  pc=0x000000bc:   ---bubble number 19 ---
+time=00000070  pc=0x000000c0:   ---bubble number 20 ---
+time=00000071  pc=0x000000c4:   ---bubble number 21 ---
+time=00000072  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000001c, branch not taken
+time=00000073  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000001b, t2 = 0x0000001c, t4 = 0x00000001
+time=00000074  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000075  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000001b
+time=00000076  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000077  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000078  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000079  pc=0x000000bc:   ---bubble number 22 ---
+time=00000080  pc=0x000000c0:   ---bubble number 23 ---
+time=00000081  pc=0x000000c4:   ---bubble number 24 ---
+time=00000082  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000001b, branch not taken
+time=00000083  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000001a, t2 = 0x0000001b, t4 = 0x00000001
+time=00000084  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000085  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000001a
+time=00000086  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000087  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000088  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000089  pc=0x000000bc:   ---bubble number 25 ---
+time=00000090  pc=0x000000c0:   ---bubble number 26 ---
+time=00000091  pc=0x000000c4:   ---bubble number 27 ---
+time=00000092  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000001a, branch not taken
+time=00000093  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000019, t2 = 0x0000001a, t4 = 0x00000001
+time=00000094  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000095  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000019
+time=00000096  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000097  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000098  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000099  pc=0x000000bc:   ---bubble number 28 ---
+time=00000100  pc=0x000000c0:   ---bubble number 29 ---
+time=00000101  pc=0x000000c4:   ---bubble number 30 ---
+time=00000102  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000019, branch not taken
+time=00000103  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000018, t2 = 0x00000019, t4 = 0x00000001
+time=00000104  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000105  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000018
+time=00000106  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000107  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000108  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000109  pc=0x000000bc:   ---bubble number 31 ---
+time=00000110  pc=0x000000c0:   ---bubble number 32 ---
+time=00000111  pc=0x000000c4:   ---bubble number 33 ---
+time=00000112  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000018, branch not taken
+time=00000113  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000017, t2 = 0x00000018, t4 = 0x00000001
+time=00000114  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000115  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000017
+time=00000116  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000117  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000118  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000119  pc=0x000000bc:   ---bubble number 34 ---
+time=00000120  pc=0x000000c0:   ---bubble number 35 ---
+time=00000121  pc=0x000000c4:   ---bubble number 36 ---
+time=00000122  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000017, branch not taken
+time=00000123  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000016, t2 = 0x00000017, t4 = 0x00000001
+time=00000124  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000125  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000016
+time=00000126  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000127  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000128  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000129  pc=0x000000bc:   ---bubble number 37 ---
+time=00000130  pc=0x000000c0:   ---bubble number 38 ---
+time=00000131  pc=0x000000c4:   ---bubble number 39 ---
+time=00000132  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000016, branch not taken
+time=00000133  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000015, t2 = 0x00000016, t4 = 0x00000001
+time=00000134  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000135  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000015
+time=00000136  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000137  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000138  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000139  pc=0x000000bc:   ---bubble number 40 ---
+time=00000140  pc=0x000000c0:   ---bubble number 41 ---
+time=00000141  pc=0x000000c4:   ---bubble number 42 ---
+time=00000142  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000015, branch not taken
+time=00000143  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000014, t2 = 0x00000015, t4 = 0x00000001
+time=00000144  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000145  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000014
+time=00000146  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000147  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000148  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000149  pc=0x000000bc:   ---bubble number 43 ---
+time=00000150  pc=0x000000c0:   ---bubble number 44 ---
+time=00000151  pc=0x000000c4:   ---bubble number 45 ---
+time=00000152  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000014, branch not taken
+time=00000153  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000013, t2 = 0x00000014, t4 = 0x00000001
+time=00000154  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000155  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000013
+time=00000156  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000157  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000158  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000159  pc=0x000000bc:   ---bubble number 46 ---
+time=00000160  pc=0x000000c0:   ---bubble number 47 ---
+time=00000161  pc=0x000000c4:   ---bubble number 48 ---
+time=00000162  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000013, branch not taken
+time=00000163  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000012, t2 = 0x00000013, t4 = 0x00000001
+time=00000164  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000165  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000012
+time=00000166  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000167  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000168  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000169  pc=0x000000bc:   ---bubble number 49 ---
+time=00000170  pc=0x000000c0:   ---bubble number 50 ---
+time=00000171  pc=0x000000c4:   ---bubble number 51 ---
+time=00000172  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000012, branch not taken
+time=00000173  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000011, t2 = 0x00000012, t4 = 0x00000001
+time=00000174  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000175  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000011
+time=00000176  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000177  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000178  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000179  pc=0x000000bc:   ---bubble number 52 ---
+time=00000180  pc=0x000000c0:   ---bubble number 53 ---
+time=00000181  pc=0x000000c4:   ---bubble number 54 ---
+time=00000182  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000011, branch not taken
+time=00000183  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000010, t2 = 0x00000011, t4 = 0x00000001
+time=00000184  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000185  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000010
+time=00000186  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000187  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000188  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000189  pc=0x000000bc:   ---bubble number 55 ---
+time=00000190  pc=0x000000c0:   ---bubble number 56 ---
+time=00000191  pc=0x000000c4:   ---bubble number 57 ---
+time=00000192  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000010, branch not taken
+time=00000193  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000000f, t2 = 0x00000010, t4 = 0x00000001
+time=00000194  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000195  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000000f
+time=00000196  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000197  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000198  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000199  pc=0x000000bc:   ---bubble number 58 ---
+time=00000200  pc=0x000000c0:   ---bubble number 59 ---
+time=00000201  pc=0x000000c4:   ---bubble number 60 ---
+time=00000202  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000000f, branch not taken
+time=00000203  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000000e, t2 = 0x0000000f, t4 = 0x00000001
+time=00000204  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000205  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000000e
+time=00000206  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000207  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000208  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000209  pc=0x000000bc:   ---bubble number 61 ---
+time=00000210  pc=0x000000c0:   ---bubble number 62 ---
+time=00000211  pc=0x000000c4:   ---bubble number 63 ---
+time=00000212  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000000e, branch not taken
+time=00000213  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000000d, t2 = 0x0000000e, t4 = 0x00000001
+time=00000214  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000215  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000000d
+time=00000216  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000217  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000218  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000219  pc=0x000000bc:   ---bubble number 64 ---
+time=00000220  pc=0x000000c0:   ---bubble number 65 ---
+time=00000221  pc=0x000000c4:   ---bubble number 66 ---
+time=00000222  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000000d, branch not taken
+time=00000223  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000000c, t2 = 0x0000000d, t4 = 0x00000001
+time=00000224  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000225  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000000c
+time=00000226  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000227  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000228  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000229  pc=0x000000bc:   ---bubble number 67 ---
+time=00000230  pc=0x000000c0:   ---bubble number 68 ---
+time=00000231  pc=0x000000c4:   ---bubble number 69 ---
+time=00000232  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000000c, branch not taken
+time=00000233  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000000b, t2 = 0x0000000c, t4 = 0x00000001
+time=00000234  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000235  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000000b
+time=00000236  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000237  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000238  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000239  pc=0x000000bc:   ---bubble number 70 ---
+time=00000240  pc=0x000000c0:   ---bubble number 71 ---
+time=00000241  pc=0x000000c4:   ---bubble number 72 ---
+time=00000242  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000000b, branch not taken
+time=00000243  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x0000000a, t2 = 0x0000000b, t4 = 0x00000001
+time=00000244  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000245  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x0000000a
+time=00000246  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000247  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000248  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000249  pc=0x000000bc:   ---bubble number 73 ---
+time=00000250  pc=0x000000c0:   ---bubble number 74 ---
+time=00000251  pc=0x000000c4:   ---bubble number 75 ---
+time=00000252  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x0000000a, branch not taken
+time=00000253  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000009, t2 = 0x0000000a, t4 = 0x00000001
+time=00000254  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000255  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000009
+time=00000256  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000257  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000258  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000259  pc=0x000000bc:   ---bubble number 76 ---
+time=00000260  pc=0x000000c0:   ---bubble number 77 ---
+time=00000261  pc=0x000000c4:   ---bubble number 78 ---
+time=00000262  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000009, branch not taken
+time=00000263  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000008, t2 = 0x00000009, t4 = 0x00000001
+time=00000264  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000265  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000008
+time=00000266  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000267  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000268  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000269  pc=0x000000bc:   ---bubble number 79 ---
+time=00000270  pc=0x000000c0:   ---bubble number 80 ---
+time=00000271  pc=0x000000c4:   ---bubble number 81 ---
+time=00000272  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000008, branch not taken
+time=00000273  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000007, t2 = 0x00000008, t4 = 0x00000001
+time=00000274  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000275  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000007
+time=00000276  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000277  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000278  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000279  pc=0x000000bc:   ---bubble number 82 ---
+time=00000280  pc=0x000000c0:   ---bubble number 83 ---
+time=00000281  pc=0x000000c4:   ---bubble number 84 ---
+time=00000282  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000007, branch not taken
+time=00000283  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000006, t2 = 0x00000007, t4 = 0x00000001
+time=00000284  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000285  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000000, a0 = 0x00000020, t2 = 0x00000006
+time=00000286  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000000
+time=00000287  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000000, t1 = 0x00000000, t3 = 0x00000000
+time=00000288  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000000, a1 = 0x00000003, branch     taken
+time=00000289  pc=0x000000bc:   ---bubble number 85 ---
+time=00000290  pc=0x000000c0:   ---bubble number 86 ---
+time=00000291  pc=0x000000c4:   ---bubble number 87 ---
+time=00000292  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000006, branch not taken
+time=00000293  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000005, t2 = 0x00000006, t4 = 0x00000001
+time=00000294  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000000, t1 = 0x00000000
+time=00000295  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000001, a0 = 0x00000020, t2 = 0x00000005
+time=00000296  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000001, t3 = 0x00000001
+time=00000297  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000001, t1 = 0x00000000, t3 = 0x00000001
+time=00000298  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000001, a1 = 0x00000003, branch     taken
+time=00000299  pc=0x000000bc:   ---bubble number 88 ---
+time=00000300  pc=0x000000c0:   ---bubble number 89 ---
+time=00000301  pc=0x000000c4:   ---bubble number 90 ---
+time=00000302  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000005, branch not taken
+time=00000303  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000004, t2 = 0x00000005, t4 = 0x00000001
+time=00000304  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000002, t1 = 0x00000001
+time=00000305  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000002, a0 = 0x00000020, t2 = 0x00000004
+time=00000306  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000002
+time=00000307  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000002, t1 = 0x00000002, t3 = 0x00000000
+time=00000308  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000002, a1 = 0x00000003, branch     taken
+time=00000309  pc=0x000000bc:   ---bubble number 91 ---
+time=00000310  pc=0x000000c0:   ---bubble number 92 ---
+time=00000311  pc=0x000000c4:   ---bubble number 93 ---
+time=00000312  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000004, branch not taken
+time=00000313  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000003, t2 = 0x00000004, t4 = 0x00000001
+time=00000314  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000004, t1 = 0x00000002
+time=00000315  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000004, a0 = 0x00000020, t2 = 0x00000003
+time=00000316  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000004
+time=00000317  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000004, t1 = 0x00000004, t3 = 0x00000000
+time=00000318  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000004, a1 = 0x00000003, branch not taken
+time=00000319  pc=0x000000bc:   SUB     t1, t1, a1              t1 := 0x00000001, t1 = 0x00000004, a1 = 0x00000003
+time=00000320  pc=0x000000c0:   ADDI    t3, zero, 1             t3 := 0x00000001, 
+time=00000321  pc=0x000000c4:   SL      t3, t3, t2              t3 := 0x00000008, t3 = 0x00000001, t2 = 0x00000003
+time=00000322  pc=0x000000c8:   OR      t0, t0, t3              t0 := 0x00000008, t0 = 0x00000000, t3 = 0x00000008
+time=00000323  pc=0x000000cc:   JAL     zero, -44                       target = 0x000000a0
+time=00000324  pc=0x000000d0:   ---bubble number 94 ---
+time=00000325  pc=0x000000d4:   ---bubble number 95 ---
+time=00000326  pc=0x000000d8:   ---bubble number 96 ---
+time=00000327  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000003, branch not taken
+time=00000328  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000002, t2 = 0x00000003, t4 = 0x00000001
+time=00000329  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000002, t1 = 0x00000001
+time=00000330  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000008, a0 = 0x00000020, t2 = 0x00000002
+time=00000331  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000008
+time=00000332  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000002, t1 = 0x00000002, t3 = 0x00000000
+time=00000333  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000002, a1 = 0x00000003, branch     taken
+time=00000334  pc=0x000000bc:   ---bubble number 97 ---
+time=00000335  pc=0x000000c0:   ---bubble number 98 ---
+time=00000336  pc=0x000000c4:   ---bubble number 99 ---
+time=00000337  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000002, branch not taken
+time=00000338  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000001, t2 = 0x00000002, t4 = 0x00000001
+time=00000339  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000004, t1 = 0x00000002
+time=00000340  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000010, a0 = 0x00000020, t2 = 0x00000001
+time=00000341  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000010
+time=00000342  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000004, t1 = 0x00000004, t3 = 0x00000000
+time=00000343  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000004, a1 = 0x00000003, branch not taken
+time=00000344  pc=0x000000bc:   SUB     t1, t1, a1              t1 := 0x00000001, t1 = 0x00000004, a1 = 0x00000003
+time=00000345  pc=0x000000c0:   ADDI    t3, zero, 1             t3 := 0x00000001, 
+time=00000346  pc=0x000000c4:   SL      t3, t3, t2              t3 := 0x00000002, t3 = 0x00000001, t2 = 0x00000001
+time=00000347  pc=0x000000c8:   OR      t0, t0, t3              t0 := 0x0000000a, t0 = 0x00000008, t3 = 0x00000002
+time=00000348  pc=0x000000cc:   JAL     zero, -44                       target = 0x000000a0
+time=00000349  pc=0x000000d0:   ---bubble number 100 ---
+time=00000350  pc=0x000000d4:   ---bubble number 101 ---
+time=00000351  pc=0x000000d8:   ---bubble number 102 ---
+time=00000352  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000001, branch not taken
+time=00000353  pc=0x000000a4:   SUB     t2, t2, t4              t2 := 0x00000000, t2 = 0x00000001, t4 = 0x00000001
+time=00000354  pc=0x000000a8:   SLI     t1, t1, 1               t1 := 0x00000002, t1 = 0x00000001
+time=00000355  pc=0x000000ac:   SRL     t3, a0, t2              t3 := 0x00000020, a0 = 0x00000020, t2 = 0x00000000
+time=00000356  pc=0x000000b0:   ANDI    t3, t3, 1               t3 := 0x00000000, t3 = 0x00000020
+time=00000357  pc=0x000000b4:   OR      t1, t1, t3              t1 := 0x00000002, t1 = 0x00000002, t3 = 0x00000000
+time=00000358  pc=0x000000b8:   BLT     t1, a1, 0x000000a0      t1 = 0x00000002, a1 = 0x00000003, branch     taken
+time=00000359  pc=0x000000bc:   ---bubble number 103 ---
+time=00000360  pc=0x000000c0:   ---bubble number 104 ---
+time=00000361  pc=0x000000c4:   ---bubble number 105 ---
+time=00000362  pc=0x000000a0:   BGE     zero, t2, 0x000000d0    t2 = 0x00000000, branch     taken
+time=00000363  pc=0x000000a4:   ---bubble number 106 ---
+time=00000364  pc=0x000000a8:   ---bubble number 107 ---
+time=00000365  pc=0x000000ac:   ---bubble number 108 ---
+time=00000366  pc=0x000000d0:   ADDI    a0, t0, 0               a0 := 0x0000000a, t0 = 0x0000000a
+time=00000367  pc=0x000000d4:   ADDI    a1, t1, 0               a1 := 0x00000002, t1 = 0x00000002
+time=00000368  pc=0x000000d8:   LW      ra, 28(sp)              ra := 0x000000fc = mem[0x0000ffd8], sp = 0x0000ffbc
+time=00000369  pc=0x000000dc:   LW      fp, 24(sp)              fp := 0x00000000 = mem[0x0000ffd4], sp = 0x0000ffbc
+time=00000370  pc=0x000000e0:   ADDI    sp, sp, 32              sp := 0x0000ffdc, sp = 0x0000ffbc
+time=00000371  pc=0x000000e4:   JALR    zero, ra, 0             , ra = 0x000000fc, target = 0x000000fc
+time=00000372  pc=0x000000e8:   ---bubble number 109 ---
+time=00000373  pc=0x000000ec:   ---bubble number 110 ---
+time=00000374  pc=0x000000f0:   ---bubble number 111 ---
+******************************************************************************
+* Debug output: a0 = 0x0000000a =         10
+******************************************************************************
+time=00000375  pc=0x000000fc:   CSRRW   zero, DOUTHEX, a0
+******************************************************************************
+* Debug output: a1 = 0x00000002 =          2
+******************************************************************************
+time=00000376  pc=0x00000100:   CSRRW   zero, DOUTHEX, a1
+time=00000377  pc=0x00000104:   ADDI    a0, zero, 0             a0 := 0x00000000, 
+time=00000378  pc=0x00000108:   LW      ra, 28(sp)              ra := 0x00000018 = mem[0x0000fff8], sp = 0x0000ffdc
+time=00000379  pc=0x0000010c:   ADDI    sp, sp, 32              sp := 0x0000fffc, sp = 0x0000ffdc
+time=00000380  pc=0x00000110:   JALR    zero, ra, 0             , ra = 0x00000018, target = 0x00000018
+time=00000381  pc=0x00000114:   ---bubble number 112 ---
+time=00000382  pc=0x00000118:   ---bubble number 113 ---
+time=00000383  pc=0x0000011c:   ---bubble number 114 ---
+time=00000384  pc=0x00000018:   JAL     zero, 72                        target = 0x00000060
+time=00000385  pc=0x0000001c:   ---bubble number 115 ---
+time=00000386  pc=0x00000020:   ---bubble number 116 ---
+time=00000387  pc=0x00000024:   ---bubble number 117 ---
+time=00000388  pc=0x00000060:   SLI     t0, a0, 1               t0 := 0x00000000, a0 = 0x00000000
+time=00000389  pc=0x00000064:   ORI     t0, t0, 1               t0 := 0x00000001, t0 = 0x00000000
+time=00000390  pc=0x00000068:   AUIPC   t1, 0x00001000          t1 := 0x00001068
+time=00000391  pc=0x0000006c:   ADDI    t1, t1, -104            t1 := 0x00001000, t1 = 0x00001068
+time=00000392  pc=0x00000070:   SW      t0, 0(t1)               mem[00001000] := 0x00000001, t1 = 0x00001000, t0 = 0x00000001
+time=00000393  pc=0x00000074:   JAL     zero, 0                 target = 0x00000074- clarvi_debug.sv:115: Verilog $finish
